@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 font-poppins">
+    <!--PAGE 1 Landing Page-->
+    <section class="flex flex-row h-screen">
+        <div class="w-1/2 bg-white shadow-md flex items-center justify-center">
+            <div class="w-1/2 rounded-md flex flex-col items-center justify-center gap-y-6">
+              <div class="w-full h-80">
+                <img src="../media/001.png" class="object-cover w-full h-full rounded-md">
+              </div>
+              <a href="https://www.linkedin.com/in/leonardoalvesnunes/" target="_blank" class="w-full">
+                <button class="rounded-md w-full bg-black p-4 hover:-translate-y-2 transition duration-200 hover:bg-blue-800 text-white">Reach out to me on LinkedIn! <i class="fab fa-linkedin"></i></button>
+              </a>
+              <a href="../media/Leonardo_Alves_Nunes_Resume.pdf" target="_blank" class="font-light hover:underline">
+                <p>Download My Resume (PDF)</p>
+            </a>
+            </div>
+          </div>
+          
+          
+        <div class="w-1/2 bg-white shadow-md flex items-center justify-center">
+            <div class="h-1/2 w-1/2 flex flex-col gap-y-6">
+                <p class="font-bold text-2xl">Hi, I'm Leo!</p>
+                <button class="rounded-md bg-black p-4 hover:-translate-y-2 transition duration-200 text-white" onclick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' });">Experience</button>
+                <button class="rounded-md bg-black p-4 hover:-translate-y-2 transition duration-200 text-white" onclick="document.getElementById('section3').scrollIntoView({ behavior: 'smooth' });">Projects</button>
+                <button class="rounded-md bg-black p-4 hover:-translate-y-2 transition duration-200 text-white" onclick="document.getElementById('section4').scrollIntoView({ behavior: 'smooth' });">Education Background</button>
+                <button class="rounded-md bg-black p-4 hover:-translate-y-2 transition duration-200 text-white" onclick="document.getElementById('section4').scrollIntoView({ behavior: 'smooth' });">For recruiters</button>
+            </div>
+        </div>
+    </section>
+    
+    <!--PAGE 2 Experience-->
+    <section class="flex flex-col w-full" id="section2">
+        <div class="shadow-md w-full p-4 text-center h-1/8 bg-black text-white font-bold text-2xl">Experience</div>
+        <div class="w-full h-full justify-center items-center flex flex-col space-y-6 py-12 bg-gray-100">
+            <div class="w-2/3 p-6 bg-white shadow-md flex space-x-2 flex-row rounded-md hover:-translate-y-2 transition duration-200">
+                <img src="../media/lyfeos_logo.jpeg" class="w-1/4 h-1/4">
+                <div class="flex flex-col w-3/4 space-y-2 justify-center">
+                    <h2 class="text-lg font-semibold">Data and Software Development Intern</h2>
+                    <ul class="list-disc ml-5">
+                        <li>Developed an internal web system with JavaScript and DynamoDB (AWS) to automate app content updates</li>
+                        <li>Conducted user interviews and tests to address pain points, collaborating with Content and Design teams</li>
+                        <li>Automated 3 data entry processes with Python (PyAutoGUI)</li>
+                        <li>Designed UML diagrams and prototypes using Figma</li>
+                        <li>Documented 25+ tables of data lake bronze layer and 10+ app events for data analysis on Amplitude</li>
+                    </ul> 
+                    <div class="flex flex-row w-full space-x-2">
+                        <div class="p-2 rounded-md bg-red-500 text-white text-xs">JavaScript</div>
+                        <div class="p-2 rounded-md bg-yellow-500 text-white text-xs">DynamoDB(AWS)</div>
+                        <div class="p-2 rounded-md bg-green-500 text-white text-xs">Python</div>
+                        <div class="p-2 rounded-md bg-blue-500 text-white text-xs">Figma</div>
+                        <div class="p-2 rounded-md bg-orange-500 text-white text-xs">Startup</div>
+                        <div class="p-2 rounded-md bg-purple-500 text-white text-xs">Product</div>
+                        <div class="p-2 rounded-md bg-pink-500 text-white text-xs">Automation</div>
+                        <div class="p-2 rounded-md bg-gray-500 text-white text-xs">User research</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/3 p-6 bg-white shadow-md flex space-x-2 flex-row rounded-md hover:-translate-y-2 transition duration-200">
+                <img src="../media/its_logo.png" class="w-1/4 h-1/4">
+                <div class="flex flex-col w-3/4 space-y-2 justify-center">
+                    <h2 class="text-lg font-semibold">Technical Assistant</h2>
+                    <ul class="list-disc ml-5">
+                        <li>Resolved support tickets, providing phone and in-person technical assistance</li>
+                        <li>Maintained student database records, ensuring data accuracy</li>
+                        <li>Managed account resets, logins, and multifactor authentication for security compliance</li>
+                    </ul>
+                    <div class="flex flex-row w-full space-x-2">
+                        <div class="p-2 rounded-md bg-red-500 text-white text-xs">Communication</div>
+                        <div class="p-2 rounded-md bg-yellow-500 text-white text-xs">Database management</div>
+                        <div class="p-2 rounded-md bg-green-500 text-white text-xs">Troubleshooting</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/3 p-6 bg-white shadow-md flex space-x-2 flex-row rounded-md hover:-translate-y-2 transition duration-200">
+                <img src="../media/lala_logo.png" class="w-1/4 h-1/4">
+                <div class="flex flex-col w-3/4 space-y-2 justify-center">
+                    <h2 class="text-lg font-semibold">Trainee Manager and Alumni Relations Coach</h2>
+                    <ul class="list-disc ml-5">
+                        <li>Planned and executed course logistics</li>
+                        <li>Led daily feedback meetings with the team</li>
+                        <li>Mentored 5 students individually</li>
+                        <li>150+ impacted students</li>
+                        <li>Coordinated daily meetings focused on improving interpersonal relationships</li>
+                    </ul>
+                    <div class="flex flex-row w-full space-x-2">
+                        <div class="p-2 rounded-md bg-red-500 text-white text-xs">Communication</div>
+                        <div class="p-2 rounded-md bg-yellow-500 text-white text-xs">Leadership</div>
+                        <div class="p-2 rounded-md bg-green-500 text-white text-xs">Task division</div>
+                        <div class="p-2 rounded-md bg-blue-500 text-white text-xs">Mentoring</div>
+                        <div class="p-2 rounded-md bg-orange-500 text-white text-xs">Community building</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--PAGE 3 Projects-->
+    <section class="flex flex-col h-screen w-full" id="section3">
+        <div class="shadow-md w-full p-4 text-center h-1/8 bg-black text-white font-bold text-2xl">Projects</div>
+        <div class="flex flex-row w-full h-full justify-center bg-green-500">
+            <div class="w-1/3 h-1/2 bg-white shadow-md flex flex-col justify-center rounded-md hover:-translate-y-2 transition duration-200">
+                <div class="flex flex-col p-6">
+                    <h2 class="text-lg font-semibold">Data and Software Development Intern</h2>
+                    <ul class="list-disc ml-5">
+                        <li>Developed an internal web system with JavaScript and DynamoDB (AWS) to automate app content updates</li>
+                        <li>Conducted user interviews and tests to address pain points, collaborating with Content and Design teams</li>
+                        <li>Automated 3 data entry processes with Python (PyAutoGUI)</li>
+                        <li>Designed UML diagrams and prototypes using Figma</li>
+                        <li>Documented 25+ tables of data lake bronze layer and 10+ app events for data analysis on Amplitude</li>
+                    </ul> 
+                </div>
+                <div class="bg-black w-full h-1/8 mt-auto rounded-b-md p-4 text-white">
+                    <p>See my Projects and Experience in Data</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!--PAGE 4 Education-->
+    <section class="flex flex-col h-screen bg-white" id="section4">
+        <div class="shadow-md w-full p-4 text-center h-1/8 bg-black text-white font-bold text-2xl">Education Background</div>
+        <div class="w-full h-full bg-gray-100 flex flex-row space-x-5 items-center justify-center">
+            <div class="p-6 bg-green-400 h-2/3 w-1/4 rounded-md shadow-md"> Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto </div>
+            <div class="p-6 bg-white h-2/3 w-1/4 flex flex-col rounded-md shadow-md">
+                <p class="font-bold text-lg">Grinnell College </p>
+                <div class="flex flex-row w-full space-x-1">
+                    <p class="font-semibold">Expected graduation: </p>
+                    <p class="font-normal">2027</p>
+                </div>
+                
+                <p class="italic">B.A. Computer Science and Economics, Statistics Concentration (Intended)</p><br>
+                <p class="font-bold text-lg">Relevant Coursework</p>
+                <ul class="list-disc ml-5">
+                    <li>OO Prob Slvg, Data Struc/Alg</li>
+                    <li>Imperative Prob Solving w/lab</li>
+                    <li>Functional Prob Solving w/lab</li>
+                    <li>Introduction to Data Science</li>
+                    <li>Linear Algebra</li>
+                    <li>Calculus II</li>
+                    <li>Microeconomic Analysis</li>
+                </ul>                  
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--PAGE 5 For recruiters-->
+    <section class="flex flex-col h-screen bg-white" id="section5">
+        <div class="shadow-md w-full p-4 text-center h-1/8 bg-black text-white font-bold text-2xl">For recruiters</div>
+        <div class="w-full h-full bg-gray-100 flex flex-row space-x-5 items-center justify-center">
+            <div class="p-6 bg-green-400 h-2/3 w-1/4 rounded-md shadow-md"> Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto </div>
+            <div class="p-6 bg-white h-2/3 w-1/4 flex flex-col rounded-md shadow-md">
+                <p class="font-bold text-lg">Grinnell College </p>
+                <div class="flex flex-row w-full space-x-1">
+                    <p class="font-semibold">Expected graduation: </p>
+                    <p class="font-normal">2027</p>
+                </div>
+                
+                <p class="italic">B.A. Computer Science and Economics, Statistics Concentration (Intended)</p><br>
+                <p class="font-bold text-lg">Relevant Coursework</p>
+                <ul class="list-disc ml-5">
+                    <li>OO Prob Slvg, Data Struc/Alg</li>
+                    <li>Imperative Prob Solving w/lab</li>
+                    <li>Functional Prob Solving w/lab</li>
+                    <li>Introduction to Data Science</li>
+                    <li>Linear Algebra</li>
+                    <li>Calculus II</li>
+                    <li>Microeconomic Analysis</li>
+                </ul>                  
+            </div>
+        </div>
+
+    </section>
+
+    <!--FOOTER-->
+    <footer class="bg-gray-700 p-6 flex flex-row justify-center items-center space-x-6 text-white">
+        <a href="https://www.linkedin.com/in/leonardoalvesnunes/" target="_blank" class="font-light hover:underline">
+            <p>Contact me on LinkedIn <i class="fab fa-linkedin"></i></p>
+        </a>
+        <a href="https://github.com/nunesleo" target="_blank" class="font-light hover:underline">
+            <p>Github <i class="fab fa-github"></i></p>
+        </a>
+        <a href="../media/Leonardo_Alves_Nunes_Resume.pdf" target="_blank" class="font-light hover:underline">
+            <p>Download My Resume (PDF)</p>
+        </a>
+        <p></p>
+    </footer>
+</body>
+</html>
