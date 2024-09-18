@@ -10,5 +10,8 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "flag-icons": "^7.2.3"
   }
 }

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.colored-tag{
+    @apply p-1 rounded-md text-white text-xs mb-2 bg-gray-400 hover:bg-blue-800 transition duration-200;
+}
