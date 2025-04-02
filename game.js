@@ -41,6 +41,8 @@ tylerImage.onload = function () {
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
+let lastTurnTimestamp = null;
+
 // FUNCTIONS
 function drawScenario() {
     ctx.fillStyle = "#91c84d";
@@ -87,15 +89,18 @@ function resetGame() {
 }
 
 function animate(timestamp) {
-    if (turnTime > 300) {
-        // Control speed
+    if (!lastTurnTimestamp) {
+        lastTurnTimestamp = timestamp; 
+    }
+
+    const elapsedTime = timestamp - lastTurnTimestamp; 
+    if (elapsedTime > 3000) { 
         if (vel > 0) {
             vel -= 0.008;
         } else {
             vel = 0;
         }
 
-        // Update position
         ballX += vel * angleX;
         ballY += vel * angleY;
 
@@ -106,23 +111,21 @@ function animate(timestamp) {
         if (ballY <= 0 || ballY >= 590) {
             angleY *= -1;
         }
+
         // Collision with P1 goal --> P2 should earn points
         if (ballX >= 190 && ballX <= 215 && ballY >= 40 && ballY <= 65) {
             scoreP2 += 1;
             resetGame();
-            return
+            return;
         }
 
         // Collision with P2 goal --> P1 should earn points
         if (ballX >= 190 && ballX <= 215 && ballY >= 540 && ballY <= 565) {
             scoreP1 += 1;
             resetGame();
-            return
+            return;
         }
-    } else {
-        turnTime += 1;
     }
-
 
     drawScenario();
     drawBall();
@@ -131,8 +134,9 @@ function animate(timestamp) {
     } else if (gameState == "twoTurn") {
         drawThomas();
     }
+
     lastTimestamp = timestamp;
-    window.cancelAnimationFrame(animationFrameId)
+    window.cancelAnimationFrame(animationFrameId);
     window.requestAnimationFrame(animate);
 }
 
@@ -145,28 +149,25 @@ restartButton.addEventListener("click", function () {
 async function throwBallNearTheHole() {
     angleX = 200 - ballX + Math.random() * 80 - 40;
 
-
     if (gameState == "oneTurn") {
-        gameState = "twoTurn"
-        turnTime = 0
-        thomasX = ballX + 10
-        thomasY = ballY + 10
+        gameState = "twoTurn";
+        lastTurnTimestamp = null; 
+        thomasX = ballX + 10;
+        thomasY = ballY + 10;
 
-        p2ScoreField.style.fontWeight = "bold"
-        p1ScoreField.style.fontWeight = "normal"
+        p2ScoreField.style.fontWeight = "bold";
+        p1ScoreField.style.fontWeight = "normal";
         angleY = 50 - ballY + Math.random() * 80 - 40;
-    }
-    else if (gameState == "twoTurn") {
-        gameState = "oneTurn"
-        turnTime = 0;
-        tylerX = ballX - 50
-        tylerY = ballY - 50
-        p1ScoreField.style.fontWeight = "bold"
-        p2ScoreField.style.fontWeight = "normal"
+    } else if (gameState == "twoTurn") {
+        gameState = "oneTurn";
+        lastTurnTimestamp = null;
+        tylerX = ballX - 50;
+        tylerY = ballY - 50;
+
+        p1ScoreField.style.fontWeight = "bold";
+        p2ScoreField.style.fontWeight = "normal";
         angleY = 565 - ballY + Math.random() * 80 - 40;
     }
-
-
 
     let magnitude = Math.sqrt(angleX * angleX + angleY * angleY);
     angleX /= magnitude;
@@ -175,12 +176,10 @@ async function throwBallNearTheHole() {
     animationFrameId = window.requestAnimationFrame(animate);
 }
 
-
 async function playGame() {
-    gameState = "twoTurn"
+    gameState = "twoTurn";
     while (true) {
         await throwBallNearTheHole();
         await delay(5500);
     }
 }
-
