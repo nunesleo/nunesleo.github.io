@@ -180,6 +180,6 @@ async function playGame() {
     gameState = "twoTurn";
     while (true) {
         await throwBallNearTheHole();
-        await delay(5500);
+        await delay(7000);
     }
 }
