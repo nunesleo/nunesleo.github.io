@@ -3,6 +3,8 @@ let gameState = "oneTurn"; // oneTurn, twoTurn, oneWalking, twoWalking
 let lastTimestamp;
 let animationFrameId;
 let turnTime = 0;
+let errorRangeThomas = 80;
+let errorRangeTyler = 80;
 
 let ballX = 200;
 let ballY = 300;
@@ -21,6 +23,10 @@ let scoreP2 = 0;
 
 const canvas = document.getElementById("game");
 const restartButton = document.getElementById("restart");
+const supportTyButton = document.getElementById("supportTy");
+const booTyButton = document.getElementById("booTy");
+const supportThButton = document.getElementById("supportTh");
+const booThButton = document.getElementById("booTh");
 const p1ScoreField = document.getElementById("p1Score");
 const p2ScoreField = document.getElementById("p2Score");
 const p1ScoreContainer = document.getElementById("p1ScoreDiv");
@@ -78,8 +84,8 @@ function resetGame() {
 
     drawScenario();
     drawBall();
-    p1ScoreField.textContent = "Tyler Score: " + scoreP1;
-    p2ScoreField.textContent = "Thomas Score: " + scoreP2;
+    p1ScoreField.textContent = "Tyler: " + scoreP1;
+    p2ScoreField.textContent = "Thomas: " + scoreP2;
     lastTimestamp = null;
     if (gameState == "oneTurn") {
         drawTyler();
@@ -140,16 +146,11 @@ function animate(timestamp) {
     window.requestAnimationFrame(animate);
 }
 
-// EVENT LISTENERS
-restartButton.addEventListener("click", function () {
-    resetGame();
-    playGame();
-});
 
 async function throwBallNearTheHole() {
-    angleX = 200 - ballX + Math.random() * 80 - 40;
-
+    
     if (gameState == "oneTurn") {
+        //Thomas playing
         gameState = "twoTurn";
         lastTurnTimestamp = null; 
         thomasX = ballX + 10;
@@ -157,16 +158,31 @@ async function throwBallNearTheHole() {
 
         p2ScoreField.style.fontWeight = "bold";
         p1ScoreField.style.fontWeight = "normal";
-        angleY = 50 - ballY + Math.random() * 80 - 40;
+        if (Math.random() < 0.1) { // Critical error
+            angleX = 200 - ballX + Math.random() * 600 - 300;
+            angleY = 50 - ballY + Math.random() * 600 - 300;
+        } else {
+            angleX = 200 - ballX + Math.random() * errorRangeThomas - errorRangeThomas / 2;
+            angleY = 50 - ballY + Math.random() * errorRangeThomas - errorRangeThomas / 2;
+        }
+        
     } else if (gameState == "twoTurn") {
+        //Tyler playing
         gameState = "oneTurn";
         lastTurnTimestamp = null;
         tylerX = ballX - 50;
         tylerY = ballY - 50;
-
+        
         p1ScoreField.style.fontWeight = "bold";
         p2ScoreField.style.fontWeight = "normal";
-        angleY = 565 - ballY + Math.random() * 80 - 40;
+        if (Math.random() < 0.1) { // Critical error
+            angleX = 200 - ballX + Math.random() * 600 - 300;
+            angleY = 565 - ballY + Math.random() * 600 - 300;
+        } else {
+            angleX = 200 - ballX + Math.random() * errorRangeTyler - errorRangeTyler / 2;
+            angleY = 565 - ballY + Math.random() * errorRangeTyler - errorRangeTyler / 2;
+        }
+        
     }
 
     let magnitude = Math.sqrt(angleX * angleX + angleY * angleY);
@@ -183,3 +199,36 @@ async function playGame() {
         await delay(7000);
     }
 }
+
+// EVENT LISTENERS BUTTONS
+restartButton.addEventListener("click", function () {
+    resetGame();
+    playGame();
+});
+
+supportThButton.addEventListener("click", function () {
+    if (errorRangeThomas <= 0) {
+        errorRangeThomas = 0;
+        console.log("This is Thomas's error range: ", errorRangeThomas);
+        return;
+    }
+    errorRangeThomas -= 10;
+});
+
+booThButton.addEventListener("click", function () {
+    errorRangeThomas += 10;
+});
+
+supportTyButton.addEventListener("click", function () {
+    if (errorRangeTyler <= 0) {
+        errorRangeTyler = 0;
+        console.log("This is Tyler's error range: ", errorRangeTyler);
+        return;
+    }
+    errorRangeTyler -= 10;
+    console.log("This is Tyler's error range: ", errorRangeTyler);
+});
+
+booTyButton.addEventListener("click", function () {
+    errorRangeTyler += 10;
+});
