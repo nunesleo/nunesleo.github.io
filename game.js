@@ -213,10 +213,12 @@ supportThButton.addEventListener("click", function () {
         return;
     }
     errorRangeThomas -= 10;
+    console.log("This is Thomas's error range: ", errorRangeThomas);
 });
 
 booThButton.addEventListener("click", function () {
     errorRangeThomas += 10;
+    console.log("This is Thomas's error range: ", errorRangeThomas);
 });
 
 supportTyButton.addEventListener("click", function () {
@@ -231,4 +233,5 @@ supportTyButton.addEventListener("click", function () {
 
 booTyButton.addEventListener("click", function () {
     errorRangeTyler += 10;
+    console.log("This is Tyler's error range: ", errorRangeTyler);
 });
