@@ -51,16 +51,35 @@ let lastTurnTimestamp = null;
 
 // FUNCTIONS
 function drawScenario() {
-    ctx.fillStyle = "#91c84d";
+    //field
+    ctx.fillStyle = "#C3CCE5";
     ctx.fillRect(0, 0, 400, 600);
-    ctx.fillStyle = "red";
+
+    //style lines
+    ctx.fillStyle = "#082975";
+    ctx.fillRect(0, 300, 600, 2);
+
+    ctx.fillStyle = "#7185B6";
+    ctx.beginPath();
+    ctx.arc(205, 0, 200 / 2, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.arc(205, 600, 200 / 2, 0, Math.PI * 2);
+    ctx.fill();
+
+    //goals
+    ctx.fillStyle = "#2C2D4A";
     ctx.fillRect(200, 50, 15, 15);
     ctx.fillRect(200, 550, 15, 15);
+
 }
 
 function drawBall() {
-    ctx.fillStyle = "white";
-    ctx.fillRect(ballX, ballY, ballSize, ballSize);
+    ctx.fillStyle = "#000583";
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, ballSize / 2, 0, Math.PI * 2);
+    ctx.fill();
 }
 
 function drawThomas() {

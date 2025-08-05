@@ -22,7 +22,7 @@
                 <a href="https://www.linkedin.com/in/leonardoalvesnunes/" target="blank" class="w-full">
                     <button class="rounded-md w-full bg-black p-4 hover:-translate-y-2 transition duration-200 hover:bg-blue-800 text-white">Reach out to me on LinkedIn! <i class="fab fa-linkedin"></i></button>
                 </a>
-                <a href="media/Leonardo_Alves_Nunes_Resume.pdf" target="blank" class="font-light hover:underline">
+                <a href="media/Resume_Leonardo_Alves_Nunes.pdf" target="blank" class="font-light hover:underline">
                     <p>Download My Resume (PDF)</p>
                 </a>
             </div>
@@ -43,10 +43,36 @@
     <section class="flex flex-col min-h-screen w-full" id="section2">
         <div class="shadow-md w-full p-4 text-center h-1/8 bg-black text-white font-bold text-2xl">Experience</div>
         <div class="w-full h-full justify-center items-center flex flex-col space-y-6 py-12 bg-gray-100">
-            <div class="w-4/5 p-6 space-y-6 bg-white shadow-md flex flex-col rounded-md hover:-translate-y-2 transition duration-200 lg:flex-row lg:space-x-2 lg:space-y-0 lg:2/3">
+            <div class="w-4/5 p-6 space-y-6 bg-white shadow-md flex flex-col items-center rounded-md hover:-translate-y-2 transition duration-200 lg:flex-row lg:space-x-2 lg:space-y-0 lg:2/3">
+                <img src="media/ismart_logo.jpg" class="w-1/2 h-1/2 mx-auto lg:w-1/4 lg:h-1/4">
+                <div class="flex flex-col w-full space-y-2 justify-center lg:w-3/4">
+                    <h2 class="font-semibold">Data Science Intern</h2>
+                    <p class="font-thin italic text-sm">Ismart</p>
+                    <ul class="list-disc ml-5 text-sm lg:text-base">
+                        <li>Built Machine Learning models (Regressions, Random Forest and XGBoost) to recommend the top 30 high potential schools on a map for outreach, identifying statistically significant drivers from census and admissions data</li>
+                        <li>Developed interactive Streamlit dashboards with 25+ visualizations to help educators monitor KPIs, engagement, and social indicators for a tech-focused program, supporting micro and macro level decision-making</li>
+                        <li>Created an ETL pipeline for academic performance and engagement data, applying scripting skills with the Google Sheets API and Pandas (Python), preparing it for analysis and storage in Azure SQL Database</li>
+                        <li>Designed a snowflake-schema data model within a scalable architecture to integrate multi-platform and organizational student records, optimizing storage via normalized dimensions and integer encoding</li>
+                    </ul> 
+                    <div class="flex flex-row flex-wrap w-full space-x-2">
+                        <div class="colored-tag">Python</div>
+                        <div class="colored-tag">Machine Learning</div>
+                        <div class="colored-tag">ETL</div>
+                        <div class="colored-tag">Figma</div>
+                        <div class="colored-tag">Automation</div>
+                        <div class="colored-tag">Streamlit</div>
+                        <div class="colored-tag">Data Visualization</div>
+                        <div class="colored-tag">Google API</div>
+                        <div class="colored-tag">Data Analysis</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-4/5 p-6 space-y-6 bg-white shadow-md flex flex-col items-center rounded-md hover:-translate-y-2 transition duration-200 lg:flex-row lg:space-x-2 lg:space-y-0 lg:2/3">
                 <img src="media/lyfeos_logo.jpeg" class="w-1/2 h-1/2 mx-auto lg:w-1/4 lg:h-1/4">
                 <div class="flex flex-col w-full space-y-2 justify-center lg:w-3/4">
                     <h2 class="font-semibold">Data and Software Development Intern</h2>
+                    <p class="font-thin italic text-sm">LyfeOS</p>
                     <ul class="list-disc ml-5 text-sm lg:text-base">
                         <li>Developed an internal web system with JavaScript and DynamoDB (AWS) to automate app content updates</li>
                         <li>Conducted user interviews and tests to address pain points, collaborating with Content and Design teams</li>
@@ -72,6 +98,7 @@
                 <img src="media/grinnell_logo.png" class="w-1/2 h-1/2 mx-auto lg:w-1/4 lg:h-1/4">
                 <div class="flex flex-col w-full py-8 space-y-2 justify-center lg:w-3/4">
                     <h2 class="font-semibold">Computer Science Grader</h2>
+                    <p class="font-thin italic text-sm">Grinnell College</p>
                     <ul class="list-disc ml-5 text-sm lg:text-base">
                         <li>Graded C programming assignments for a class of 20+ students, providing detailed feedback on coding standards
                             and clean code practices</li>
@@ -90,6 +117,7 @@
                     </div>
                     <br>
                     <h2 class="font-semibold">Technical Assistant | Information Technology Services</h2>
+                    <p class="font-thin italic text-sm">Grinnell College</p>
                     <ul class="list-disc ml-5 text-sm lg:text-base">
                         <li>Resolved support tickets, providing phone and in-person technical assistance</li>
                         <li>Maintained student database records, ensuring data accuracy</li>
@@ -109,6 +137,7 @@
                 <img src="media/lala_logo.png" class="w-1/2 h-1/2 mx-auto lg:w-1/4 lg:h-1/4">
                 <div class="flex flex-col w-full space-y-2 justify-center lg:w-3/4">
                     <h2 class="font-semibold">Trainee Manager and Alumni Relations Coach</h2>
+                    <p class="font-thin italic text-sm">Latin American Leadership Academy</p>
                     <ul class="list-disc ml-5 text-sm lg:text-base">
                         <li>Planned and executed course logistics</li>
                         <li>Led daily feedback meetings with the team</li>
@@ -130,7 +159,12 @@
 
     <!--PAGE 3 Projects-->
     <section class="flex flex-col min-h-screen w-full" id="section3">
-        <div class="shadow-md w-full p-4 text-center bg-black text-white font-bold text-2xl">Projects</div>
+        <div class="shadow-md w-full p-4 text-center bg-black text-white font-bold text-2xl">
+            <div class="group relative inline-block">
+                <span class="block group-hover:hidden">Projects</span>
+                <span class="hidden group-hover:block transition duration-200">Can you find the hidden game in this portfolio?</span>
+            </div>
+        </div>
         <div class="flex flex-col w-full min-h-screen py-6 justify-center items-center bg-gray-100 space-y-6 lg:py-6">
 
             <div class="w-4/5 p-6 bg-white shadow-md flex space-y-6 flex-col rounded-md hover:-translate-y-2 transition duration-200 lg:flex-row lg:space-y-0 lg:2/3 lg:space-x-6">
@@ -236,7 +270,7 @@
         <div class="w-full bg-gray-100 min-h-screen py-6 flex flex-col space-y-6 items-center justify-center lg:flex-row lg:py-0 lg:space-x-6">
             <div class="flex flex-col w-4/5 bg-white rounded-md shadow-md hover:-translate-y-2 transition duration-200 lg:w-1/3">
                 <div class="p-6 bg-white rounded-md text-sm lg:text-base"> 
-                    <p>Hi, my name is Leo. I’m a first-gen Brazilian student at Grinnell College, majoring in Computer Science, Economics, and Statistics. I am the president of the Brazilian Student Association (BRASA) at Grinnell, where I lead strategic meetings to plan events and promote community engagement.</p>
+                    <p>Hi, my name is Leo. I’m a first-gen Brazilian student at Grinnell College, majoring in Computer Science, Economics, and Statistics.</p>
                     <br>
                     <p>In high school, I developed my skills through science olympiads, got experience in graphical and UX/UI design, and worked on tech projects for various institutions.</p>
                     <p>As a fellow at the Ismart Institute, my life was deeply impacted through education and I plan to continue my studies now focusing on <span class="font-bold">Software Development</span> and <span class="font-bold">Data Science</span>  through personal projects.</p>
@@ -280,7 +314,16 @@
     <section class="flex flex-col min-h-screen bg-white" id="section5">
         <div class="shadow-md w-full p-4 text-center bg-black text-white font-bold text-2xl">For recruiters</div>
         <div class="w-full min-h-screen bg-gray-100 flex flex-col space-y-6 justify-center lg:flex-row lg:space-x-5">
-            <div class="p-16 w-full justify-center bg-gray-100 shadow-md flex flex-col space-y-6 lg:w-1/2 lg:min-h-screen">  
+            <div class="p-16 w-full justify-center bg-gray-100 shadow-md flex flex-col space-y-6 lg:w-1/2 lg:min-h-screen">
+                <div class="flex flex-col justify-center bg-white shadow-md rounded-md">
+                    <div class="w-full p-6">
+                        <p class="text-sm">"His contributions were thoughtful, impactful, and well-documented."</p>
+                        <p class="text-sm">"I fully recommend Leo for any opportunity in the data field, his performance during the Summer Program was outstanding and speaks volumes about his potential and character."</p>
+                    </div>
+                    <div class="w-full p-3 rounded-b-md bg-black">
+                        <p class="text-sm italic text-center text-white">Supervised me at Ismart</p>
+                    </div>
+                </div>  
                 <div class="flex flex-col justify-center bg-white shadow-md rounded-md">
                     <div class="w-full p-6">
                         <p class="text-sm">"I had the opportunity to work with Leonardo on a recent project, and I was very impressed with his approach to personal and professional development."</p>
@@ -305,7 +348,7 @@
                 <div class="w-4/5 p-6 bg-white flex flex-col rounded-md shadow-md space-y-2 hover:-translate-y-2 transition duration-200 lg:w-3/5">
                     <p class="font-bold text-lg">Looking for opportunities on: </p>
                     <div class="flex flex-row w-full space-x-1">
-                        <p class="font-semibold">Summer 2025</p>
+                        <p class="font-semibold">Summer 2026</p>
                     </div>
                     <br>
                     <p class="font-bold text-lg">Intern roles:</p>
@@ -331,7 +374,7 @@
         <a href="https://www.linkedin.com/in/leonardoalvesnunes/" target="blank" class="font-light hover:underline">
             <p>Contact me on LinkedIn <i class="fab fa-linkedin"></i></p>
         </a>
-        <a href="media/Leonardo_Alves_Nunes_Resume.pdf" target="blank" class="font-light hover:underline">
+        <a href="media/Resume_Leonardo_Alves_Nunes.pdf" target="blank" class="font-light hover:underline">
             <p>Download My Resume (PDF)</p>
         </a>
         <a href="https://github.com/nunesleo" target="blank" class="font-light hover:underline">
